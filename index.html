@@ -383,9 +383,10 @@
 
         .hotel-name {
             font-size: 1.2em;
-            font-weight: bold;
-            color: #2c3e50;
+            font-weight: 500;
+            color: var(--text-primary);
             margin-bottom: 10px;
+            letter-spacing: 0.5px;
         }
 
         .hotel-info {
@@ -407,24 +408,40 @@
             background: rgba(74, 144, 217, 0.1);
             padding: 20px;
             border-radius: 10px;
-            border: 1px solid #dee2e6;
+            border: 1px solid rgba(74, 144, 217, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .restaurant-card:hover {
+            border-color: rgba(74, 144, 217, 0.4);
+            background: rgba(74, 144, 217, 0.15);
         }
 
         .restaurant-card h4 {
             color: var(--hokkaido-light);
             margin-bottom: 10px;
             font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .restaurant-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
         .footer {
-            background: #2c3e50;
-            color: white;
+            background: linear-gradient(135deg, rgba(10, 22, 40, 0.98) 0%, rgba(15, 29, 50, 0.95) 100%);
+            color: var(--text-secondary);
             padding: 40px;
             text-align: center;
+            border-top: 1px solid var(--border-glass);
         }
 
         .footer h3 {
             margin-bottom: 20px;
+            color: var(--hokkaido-light);
+            font-weight: 400;
+            letter-spacing: 2px;
         }
 
         .back-to-top {
