@@ -98,48 +98,57 @@
         }
 
         .toc {
-            background: #f8f9fa;
-            padding: fancypx;
-            border-bottom: 2px solid #e9ecef;
+            background: linear-gradient(135deg, rgba(15, 29, 50, 0.8) 0%, rgba(74, 144, 217, 0.1) 100%);
+            padding: 40px;
+            border-bottom: 1px solid var(--border-glass);
+            backdrop-filter: blur(10px);
         }
 
         .toc h2 {
             text-align: center;
-            color: #495057;
-            margin-bottom: fancypx;
-            font-size: 1.5em;
+            color: var(--hokkaido-light);
+            margin-bottom: 30px;
+            font-size: 1.8em;
+            font-weight: 300;
+            letter-spacing: 2px;
         }
 
         .toc-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            padding: 20px 40px;
+            gap: 15px;
+            padding: 0 20px;
         }
 
         .toc-item {
-            background: rgba(74, 144, 217, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: rgba(74, 144, 217, 0.15);
+            border: 1px solid rgba(74, 144, 217, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
         }
 
         .toc-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
+            background: rgba(74, 144, 217, 0.25);
+            border-color: rgba(74, 144, 217, 0.4);
+            box-shadow: 0 8px 25px rgba(74, 144, 217, 0.2);
         }
 
         .toc-item .day {
-            font-weight: bold;
+            font-weight: 500;
             color: var(--hokkaido-light);
-            font-size: 1.1em;
+            font-size: 1.2em;
+            letter-spacing: 0.5px;
         }
 
         .toc-item .location {
             color: var(--text-muted);
-            font-size: 0.9em;
+            font-size: 0.95em;
+            margin-top: 5px;
         }
 
         .content {
