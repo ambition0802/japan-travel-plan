@@ -1,0 +1,98 @@
+# AGENTS.md
+
+本文件为AI编程助手提供项目上下文和开发指南。
+
+## 项目概述
+
+这是一个**静态HTML网站**项目，展示日本关西+北海道7天6晚旅行计划。
+
+- **项目类型**: 静态网页（HTML + CSS）
+- **部署平台**: GitHub Pages
+- **访问地址**: https://ambition0802.github.io/japan-travel-plan/
+
+## 文件结构
+
+```
+.
+├── index.html      # 主页面（约1900行，包含HTML+CSS）
+├── README.md       # 项目说明文档
+├── deploy.sh       # GitHub Pages部署脚本
+└── AGENTS.md       # 本文件
+```
+
+## 构建与部署
+
+本项目**无需构建**，直接部署静态文件即可。
+
+### 本地预览
+```bash
+# 方式1：直接用浏览器打开
+open index.html
+
+# 方式2：使用Python临时服务器
+python3 -m http.server 8000
+# 访问 http://localhost:8000
+```
+
+### 部署到GitHub Pages
+```bash
+# 运行部署脚本
+bash deploy.sh
+
+# 或手动操作
+git add index.html
+git commit -m "更新行程内容"
+git push origin master
+```
+
+## 代码风格指南
+
+### HTML规范
+- 使用**中文**作为主要语言（`lang="zh-CN"`）
+- 语义化标签：使用`<header>`、`<section>`、`<footer>`等
+- 保持缩进：2个空格或4个空格，与现有代码保持一致
+
+### CSS规范
+- 使用**CSS变量**管理配色方案（`var(--hokkaido-blue)`）
+- 命名规范：小写字母+连字符（`.toc-item`, `.card-title`）
+- 响应式设计：使用`@media`查询适配移动端
+- 避免使用`!important`
+
+### 配色方案
+本项目使用"北海道蓝"配色：
+```css
+--hokkaido-blue: #4a90d9;    /* 主色调 */
+--hokkaido-light: #7bb3e0;   /* 浅色 */
+--hokkaido-dark: #2a5a8a;    /* 深色 */
+--primary-bg: #0a1628;        /* 背景色 */
+```
+
+## 内容更新指南
+
+### 修改行程
+1. 在`index.html`中找到对应`<section id="dayX">`
+2. 修改时间、地点、活动内容
+3. 保持HTML结构不变
+
+### 添加新卡片
+```html
+<div class="card">
+    <div class="card-title">标题</div>
+    <p>内容...</p>
+</div>
+```
+
+## 注意事项
+
+1. **不要拆分文件**：目前所有内容都在`index.html`中，保持这种结构
+2. **图片使用**：如需添加图片，使用外部图床URL，不要上传大文件到Git仓库
+3. **兼容性**：目标浏览器为Chrome、Safari、Firefox最新版，无需兼容IE
+4. **文件编码**：统一使用UTF-8编码
+
+## 部署后验证
+
+部署完成后，访问以下地址验证：
+- https://[username].github.io/japan-travel-plan/
+- 检查页面加载是否正常
+- 检查所有链接是否可点击
+- 检查响应式布局（手机/平板/桌面）
